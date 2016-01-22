@@ -1,4 +1,6 @@
 #!/usr/bin/python -tt
+# -*- coding: utf-8 -*- 
+
 # Exercícios by Nick Parlante (CodingBat)
 
 # A. dormir
@@ -10,7 +12,7 @@ def dormir(dia_semana, feriado):
   if feriado:
     return True
   
-  if !dia_semana:
+  if not dia_semana:
     return True
   
   return False
@@ -22,9 +24,9 @@ def dormir(dia_semana, feriado):
 # retorne True quando houver problemas
 def alunos_problema(a_sorri, b_sorri):
   
-  if (a_sorri and b_sorri):
+  if a_sorri and b_sorri:
     return True
-  elif (!a_sorri and !b_sorri):
+  elif not a_sorri and not b_sorri:
     return True
   
   return False
@@ -55,7 +57,7 @@ def diff21(n):
     diff = abs(n - 21)
     diff *= 2
   else:
-    diff = n - 21
+    diff = 21 - n
   
   return diff
 
@@ -75,9 +77,9 @@ def papagaio(falando, hora):
 # dados dois inteiros a e b
 # retorna True se um dos dois é 10 ou a soma é 10
 def dez(a, b):
-  if (a + b == 10)
+  if (a + b == 10):
     return True
-  elif ((a == 10) or (b == 10))
+  elif ((a == 10) or (b == 10)):
     return True
   
   return False
@@ -90,7 +92,7 @@ def dez(a, b):
 # dista10(90) -> True
 # dista10(89) -> False
 def dista10(n):
-  if ((abs(n - 100) <= 10) or (abs(n - 200) <= 10))
+  if ((abs(n - 100) <= 10) or (abs(n - 200) <= 10)):
     return True
   
   return False
@@ -102,8 +104,8 @@ def dista10(n):
 # apaga('kitten', 4) -> 'kittn'
 def apaga(s, n):
   
-  newstr = s[:n - 1] + s[n + 1:]
-  return newstr 
+  new_str = s[:n] + s[n + 1:]
+  return new_str 
 
 # I. troca
 # seja uma string s
@@ -117,12 +119,8 @@ def troca(s):
   if len(s) <= 1:
     return s
   
-  i = 0
-  mid = len(s) / 2
-  while i < mid:
-    
-  
-  return s
+  new_str = s[-1] + s[1: -1] + s[0]  
+  return new_str
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
