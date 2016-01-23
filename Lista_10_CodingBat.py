@@ -1,4 +1,5 @@
 #!/usr/bin/python -tt
+# -*- coding: utf-8 -*-
 # Exercícios by Nick Parlante (CodingBat)
 
 # A. near_ten
