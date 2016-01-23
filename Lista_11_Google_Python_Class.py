@@ -15,14 +15,29 @@
 # adiciona 'ing' no final
 # Caso a string já termine em 'ing', acrescentará 'ly'.
 def verbing(s):
-  return 
+
+  if len(s) > 2:
+    s_aux = s[-3:]
+    if s_aux == "ing":
+      return s + "ly"
+    else:
+      return s + "ing"
+
+  return s
 
 # H. not_bad
 # Dada uma string, procura a primeira ocorrência de 'not' e 'bad'
 # Se 'bad' aparece depois de 'not' troca 'not' ... 'bad' por 'good'
 # Assim 'This dinner is not that bad!' retorna 'This dinner is good!'
 def not_bad(s):
-  return
+
+  i = s.find("not")
+  j = s.find("bad")
+
+  if i != -1 and j > i:
+    return s[:i] + "good" + s[j+3:]
+
+  return s
 
 # I. inicio_final
 # Divida cada string em dois pedaços.
@@ -32,24 +47,63 @@ def not_bad(s):
 # Dadas 2 strings, a e b, retorna a string
 #  a-inicio + b-inicio + a-final + b-final
 def inicio_final(a, b):
-  return
+
+  i = len(a) / 2
+  if len(a) % 2 != 0:
+    i += 1
+
+  j = len(b) / 2
+  if len(b) % 2 != 0:
+    j += 1
+
+  return a[:i] + b[:j] + a[i:] + b[j:]
 
 # J. zeros finais
 # Verifique quantos zeros há no final de um número inteiro positivo
 # Exemplo: 10010 tem 1 zero no fim e 908007000 possui três
 def zf(n):
-  return
+
+  c = 0
+  s = str(n)
+  for i in xrange(0,len(s)):
+    if s[i] == "0":
+      c += 1
+    else:
+      c = 0
+
+  return c
+
 # K. conta 2
 # Verifique quantas vezes o dígito 2 aparece entre 0 e n-1
 # Exemplo: para n = 20 o dígito 2 aparece duas vezes entre 0 e 19
 def conta2(n):
-  return
+
+  conta = 0
+  for x in xrange(0, n):
+    s = str(x)
+    for j in xrange(0, len(s)):
+      if s[j] == "2":
+        conta += 1
+
+  return conta
+
 # L. inicio em potencia de 2
 # Dado um número inteiro positivo n retorne a primeira potência de 2
 # que tenha o início igual a n
 # Exemplo: para n = 65 retornará 16 pois 2**16 = 65536
 def inip2(n):
-  return
+
+  pot = 0
+  while pot < 320:
+    s = str(2 ** pot)
+    ns = str(n)
+
+    if s[:len(ns)] == ns:
+      break
+
+    pot += 1
+
+  return pot
 
 def test(obtido, esperado):
   if obtido == esperado:
